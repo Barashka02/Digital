@@ -56,14 +56,14 @@ architecture Behavioral of TOP is
 begin
     with note_select select
         mapped_note_select <=
-            "00000001" when "1000",  -- Corresponds to C' note (8)
-            "00000010" when "0111",  -- Corresponds to B note (7)
-            "00000100" when "0110",  -- Corresponds to A note (6)
-            "00001000" when "0101",  -- Corresponds to G note (5)
-            "00010000" when "0100",  -- Corresponds to F note (4)
-            "00100000" when "0011",  -- Corresponds to E note (3)
-            "01000000" when "0010",  -- Corresponds to D note (2)
-            "10000000" when "0001",  -- Corresponds to C note (1)
+            "00000001" when "0001",  -- Corresponds to C note (1)
+            "00000010" when "0010",  -- Corresponds to D note (2)
+            "00000100" when "0011",  -- Corresponds to E note (3)
+            "00001000" when "0100",  -- Corresponds to F note (4)
+            "00010000" when "0101",  -- Corresponds to G note (5)
+            "00100000" when "0110",  -- Corresponds to A note (6)
+            "01000000" when "0111",  -- Corresponds to B note (7)
+            "10000000" when "1000",  -- Corresponds to C' note (8)
             "00000000" when others;  -- Default or unused value
     -- Instantiate the SwitchPiano module
     U1: SwitchPiano

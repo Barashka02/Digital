@@ -63,9 +63,11 @@ begin
         if stop_s = '1' then
             freq_reg <= '0';
             LED_s <= "00000000";
-            cat_s <= "0001100";
+            an_s <= "0000";
+            cat_s <= "0000001";
             
-        else
+        else  
+            an_s <= "0111";
             case switch_s is 
                 when "10000000" =>
                     LED_s <= "10000000";
@@ -124,7 +126,7 @@ begin
                     end if;
                  when "00000010" =>
                     LED_s <= "00000010";
-                    cat_s <= "0010110";
+                    cat_s <= "0010010";
                     if count = D4 then 
                         freq_reg <= not freq_reg;
                         count <= 0;
@@ -142,7 +144,7 @@ begin
                     end if;   
                  when others =>
                     LED_s <= "00000000";
-                    cat_s <= "0001100";
+                    cat_s <= "1111111";
                     freq_reg <= '0';
                 end case;
             end if;
@@ -152,7 +154,7 @@ begin
   freq_s <= freq_reg;
   gain_s <= '1';
   shutdown_s <= '1';
-  an_s <= "0111";
+
   
                     
 end Behavioral;
